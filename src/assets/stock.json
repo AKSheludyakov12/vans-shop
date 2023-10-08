@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Vans Old Skool",
+    "price": "4490",
+    "category": "men",
+    "size": [40, 41, 42],
+    "img": "Кеды Vans Old Skool.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Vans Old Skool Black Checkerboard",
+    "price": "4490",
+    "category": "'men', 'women'",
+    "size": [38, 39, 40, 41, 42],
+    "img": "Vans Old Skool Black Checkerboard.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Детские кеды Vans Old Skool",
+    "price": "6190",
+    "category": "kids",
+    "size": [27, 28, 29, 30, 31, 32],
+    "img": "Детские кеды Vans Old Skool.jpg"
+  }
+]

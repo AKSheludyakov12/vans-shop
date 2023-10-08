@@ -1,15 +1,28 @@
+import { useState } from "react";
+
 const Categories = () => {
+  const category = ["Все", "Мужские", "Женские", "Детские"];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const changeCategoriesHandler = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
     <div className="categories">
       <ul>
-        <li className="active">Все</li>
-        <li>Мужские</li>
-        <li>Женские</li>
-        <li>Детские</li>
+        {category.map((value, index) => {
+          return (
+            <li
+              key={index}
+              onClick={() => changeCategoriesHandler(index)}
+              className={activeIndex === index ? "active" : " "}>
+              {value}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
 };
 
-
-export default Categories
+export default Categories;

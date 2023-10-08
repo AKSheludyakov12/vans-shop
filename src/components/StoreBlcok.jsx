@@ -1,34 +1,31 @@
-import image from "../img/store/Кеды Vans Old Skool.jpg"
-import { useState } from "react";
+import { useState } from "react"
 
-const StoreBlock = (props) => {
 
-  const [count, setCount] = useState(0)
-  const addCountHandler = ( ) => {
-    setCount(count+1)
-  }
+const StoreBlock = ({title, price, size, img}) => {
+
+  const [activeSize, setActiveSize] = useState()
 
 
   return(
-  props.stock.map((item, key)=>
      (
       <div className="pizza-block">
    <img
          className="pizza-block__image"
-         src={"img/store/" + item.img }
+         src={"img/store/" + img }
         alt="Pizza"
        />
  
-       <h4 className="pizza-block__title">{item.title} </h4>
+       <h4 className="pizza-block__title">{title} </h4>
        <div className="pizza-block__selector">
          <ul>
-          <li className="active">{item.size[0]}</li>
-          {item.size.map((size)=>(
-            <li>{size+1}</li>))}
+            {size.map((size, index) => (
+              
+              <li key={index} onClick={()=>setActiveSize(index)} className={activeSize === index ? "active" : "" }>{size}</li>
+            )) }
          </ul>
        </div>
        <div className="pizza-block__bottom">
-         <div className="pizza-block__price">{item.price}</div>
+         <div className="pizza-block__price">{price}</div>
          <button className="button button--outline button--add">
            <svg
              width="12"
@@ -42,13 +39,13 @@ const StoreBlock = (props) => {
                fill="white"
              />
            </svg>
-           <span onClick={addCountHandler}>Добавить</span>
-           <i>{count}</i>
+           <span>Добавить</span>
+           <i>0</i>
          </button>
        </div>
     </div>
     )
-    ))
+    )
 }
 
 export default StoreBlock
